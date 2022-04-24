@@ -1,14 +1,17 @@
+// Variables to link constructor files
 const Employee = require('./lib/employee');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
 const generateHtml = require('./util/generateHtml');
+// Variables to link dependencies
 const Inquirer = require('inquirer');
 const fs = require('fs');
-
+//Empty team array
 const team = [];
 
 
+// Function to begin application with manager info
 const init = () => {
     Inquirer.prompt([
         {
@@ -36,8 +39,7 @@ const init = () => {
     })
 }
 
-init();
-
+// Function to add team members or complete your team
 const addMembers = () => {
     Inquirer.prompt([
         {
@@ -50,25 +52,25 @@ const addMembers = () => {
     .then((selection)=>{
         switch(selection.memberType){
             case 'An Engineer':
-                console.log("engineer chosen");
+                // Calls function to add an engineer
                 addEngineer();
                 break;
             case 'An Intern':
-                console.log("intern chosen");
+                // Calls function to add an intern
                 addIntern();
                 break;
             case 'No, my team is complete':
-                console.log("team complete");
-                console.log(team);
+                // Calls function to write html page
                 buildPage();
                 break;
             default: 
-                console.log("default");
+                console.log("Goodbye!");
                 break;
         }
     })
 }
 
+// Function to add an engineer to your team
 const addEngineer = () => {
     Inquirer.prompt([
         {
@@ -90,12 +92,14 @@ const addEngineer = () => {
         },     
     ])
     .then((data) => {
+        // Create a new engineer & push to team array
         const newEng = new Engineer(data.name, data.id, data.email, data.github);
         team.push(newEng);
         addMembers();
     })
 }
 
+// Function to add an intern to your team
 const addIntern = () => {
     Inquirer.prompt([
         {
@@ -117,15 +121,19 @@ const addIntern = () => {
         },     
     ])
     .then((data) => {
+        // Create a new intern & push to team array
         const newInt = new Intern(data.name, data.id, data.email, data.school);
         team.push(newInt);
         addMembers();
     })
 }
 
+// Function to create html file & fill with team information
 const buildPage = () => {
-    console.log("Team Complete");
     fs.writeFile('./dist/index.html', generateHtml(team), (err) => {
-        err ? console.log(err) : console.log("Success");
+        err ? console.log(err) : console.log("Team Complete! Check the 'dist' folder to view your completed index.html file.");
     })
 }
+
+// Call to run application
+init();
