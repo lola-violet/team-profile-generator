@@ -2,8 +2,9 @@ const Employee = require('./lib/employee');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
-const generateHTML = require('./util/generateHtml');
+const generateHtml = require('./util/generateHtml');
 const Inquirer = require('inquirer');
+const fs = require('fs');
 
 const team = [];
 
@@ -58,6 +59,8 @@ const addMembers = () => {
                 break;
             case 'No, my team is complete':
                 console.log("team complete");
+                console.log(team);
+                buildPage();
                 break;
             default: 
                 console.log("default");
@@ -117,5 +120,12 @@ const addIntern = () => {
         const newInt = new Intern(data.name, data.id, data.email, data.school);
         team.push(newInt);
         addMembers();
+    })
+}
+
+const buildPage = () => {
+    console.log("Team Complete");
+    fs.writeFile('./dist/index.html', generateHtml(team), (err) => {
+        err ? console.log(err) : console.log("Success");
     })
 }
