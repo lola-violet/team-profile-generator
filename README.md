@@ -25,7 +25,17 @@ Before installing, please make sure you have node.js installed locally. If you d
 ## Usage
 Once you've installed the required dependencies, run the application by entering "node index.js" into the integrated terminal. You'll then be prompted to enter the team manager's name & information. Once you've answered all the manager prompts, you'll have the option to add an engineer or an intern to your team, or complete your team setup. You can add as many engineers & interns as you'd like. When all team members are entered, select "my team is complete" to generate your html page. 
 
+View [Walkthrough_Video](https://drive.google.com/file/d/1BwnqaxUqWpEVMvg9DSUS5n6KZZoTredf/view?usp=sharing)
 
+---
+
+![Run_List](/assets/RUN_List.png)
+
+![Run_Complete](/assets//RUN_Complete.png)
+
+![Output_Example1](/assets/OUTPUT_Example1.png)
+
+![Output_Example2](/assets/OUTPUT_Example2.png)
 
 ---
 
