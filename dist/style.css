@@ -1,0 +1,39 @@
+:root {
+    --header: #540b0e;
+    --cardHeader: #9e2a2b;
+    --cardBody: #9e2a2c48;
+    --bodyBg: whitesmoke;
+}
+
+body {
+    background-color: var(--bodyBg);
+}
+
+.team-heading {
+    background-color: var(--header);
+    color: whitesmoke;
+    border-radius: 0%;
+    margin-bottom: 30px !important;
+}
+
+.custom-header {
+    background-color: var(--cardHeader);
+    color: whitesmoke;
+    text-align: center;
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.employee-card {
+    background-color: var(--cardBody);
+    margin: 0px 15px 30px 15px;
+    min-width: 330px;
+    border: 0px;
+    box-shadow: 5px 5px 5px var(--header);
+    border-radius: 10px;
+}
+
+.employee-card ul {
+    background-color: whitesmoke;
+    border-radius: 5px;
+}
