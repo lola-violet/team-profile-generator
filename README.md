@@ -10,6 +10,7 @@ A command-line application which generates a styled html page to help users keep
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Images](#images)
 * [License](#license)
 * [Contributing](#contributing)
 * [Testing](#testing)
@@ -28,6 +29,8 @@ Once you've installed the required dependencies, run the application by entering
 View [Walkthrough_Video](https://drive.google.com/file/d/1BwnqaxUqWpEVMvg9DSUS5n6KZZoTredf/view?usp=sharing)
 
 ---
+
+## Images
 
 ![Run_List](/assets/RUN_List.png)
 
